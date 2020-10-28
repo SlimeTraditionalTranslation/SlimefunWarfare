@@ -13,55 +13,53 @@ import org.bukkit.NamespacedKey;
 public final class Items {
     public static final Category sfwarfareCategory = new Category(
             new NamespacedKey(SlimefunWarfare.getInstance(), "slimefunwarfare"),
-            new CustomItem(Material.DIAMOND_SWORD, "Slimefun Warfare")
+            new CustomItem(Material.DIAMOND_SWORD, "黏液戰爭")
     );
     public static final Category sfwarfareGunsCategory = new Category(
             new NamespacedKey(SlimefunWarfare.getInstance(), "slimefunwarfare_guns"),
-            new CustomItem(Material.CROSSBOW, "Slimefun Warfare - Guns")
+            new CustomItem(Material.CROSSBOW, "黏液戰爭 - 槍")
     );
 
     public static final SlimefunItemStack SLIMESTEEL = new SlimefunItemStack(
             "SLIMESTEEL_INGOT",
             Material.IRON_INGOT,
-            "&aSlimesteel Ingot",
+            "&a黏液鋼錠",
             "",
-            "Hard but elastic, this alloy",
-            "is perfect for all sorts",
-            "of applications"
+            "堅硬但有彈性,這種合金",
+            "非常適合各種應用"
     );
 
     public static final SlimefunItemStack REINFORCED_SLIMESTEEL = new SlimefunItemStack(
         "REINFORCED_SLIMESTEEL_INGOT",
         Material.IRON_INGOT,
-        "&aReinforced Slimesteel Ingot",
+        "&a強化黏液鋼錠",
         "",
-        "Hard but elastic, this alloy",
-        "is perfect for all sorts",
-        "of applications"
+        "堅硬但有彈性,這種合金",
+        "非常適合各種應用"
     );
 
     public static final SlimefunItemStack SCOPE = new SlimefunItemStack(
         "SCOPE",
         Material.STICK,
-        "&aScope"
+        "&a瞄準鏡"
     );
 
     public static final SlimefunItemStack BARREL = new SlimefunItemStack(
         "BARREL",
         Material.STICK,
-        "&7Barrel"
+        "&7槍管"
     );
 
     public static final SlimefunItemStack ADVANCED_BARREL = new SlimefunItemStack(
         "ADVANCED_BARREL",
         Material.STICK,
-        "&7Advanced Barrel"
+        "&7進階槍管"
     );
 
     public static final SlimefunItemStack BULLET_FACTORY  = new SlimefunItemStack(
         "BULLET_FACTORY",
         Material.SMOKER,
-        "&7Bullet Factory",
+        "&7子彈工廠",
         LoreBuilder.powerPerSecond(16),
         LoreBuilder.powerBuffer(32),
         LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
@@ -70,29 +68,29 @@ public final class Items {
     public static final SlimefunItemStack LEAD_BULLET = new SlimefunItemStack(
         "LEAD_BULLET",
         Material.IRON_NUGGET,
-        "&7Lead Bullet",
-        "&7x1 damage"
+        "&7鉛彈",
+        "&7x1傷害"
     );
 
     public static final SlimefunItemStack DU_BULLET = new SlimefunItemStack(
         "DU_BULLET",
         Material.IRON_NUGGET,
-        "&aDU Bullet",
-        "&7Sets hit entities on fire",
-        "&7x1.5 damage"
+        "&a鈾子彈",
+        "&7使命中生物時著火",
+        "&7x1.5傷害"
     );
 
     public static final SlimefunItemStack GOLD_BULLET = new SlimefunItemStack(
         "GOLD_BULLET",
         Material.GOLD_NUGGET,
-        "&6Gold Bullet",
-        "&7x2 damage"
+        "&6黃金子彈",
+        "&7x2傷害"
     );
 
     public static final SlimefunItemStack GUN_CASE = new SlimefunItemStack(
         "GUN_CASE",
         Material.CROSSBOW,
-        "&7Gun Case",
-        "&7The base of all guns"
+        "&7槍外殼",
+        "&7所有槍的基礎"
     );
 }

@@ -6,7 +6,7 @@
 
     <groupId>io.github.seggan.slimefunwarfare</groupId>
     <artifactId>SlimefunWarfare</artifactId>
-    <version>UNOFFICIAL</version>
+    <version>1.0 Efina</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

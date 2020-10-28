@@ -8,96 +8,95 @@ public final class Guns {
     public static final SlimefunItemStack PISTOL = new SlimefunItemStack(
         "GUN_PISTOL",
         Material.CROSSBOW,
-        "&7Pistol",
-        "&7A short range gun",
-        "&7that reloads quickly.",
-        "&7Useful for close combat.",
-        "&cRange: 7",
-        "&cDamage: 2 hearts",
-        "&cCooldown: 0.75 seconds"
+        "&7手槍",
+        "&7短射程槍",
+        "&7快速重裝.",
+        "&7對近距離戰鬥有用.",
+        "&c射程: 7",
+        "&c傷害: 2格血",
+        "&c重新裝載: 0.75秒"
     );
 
     public static final SlimefunItemStack REVOLVER = new SlimefunItemStack(
         "GUN_REVOLVER",
         Material.CROSSBOW,
-        "&7Revolver",
-        "&7A short range gun",
-        "&7that reloads quickly.",
-        "&7Useful for close combat.",
-        "&cRange: 10",
-        "&cDamage: 3 hearts",
-        "&cCooldown: 0.5 seconds"
+        "&7左輪手槍",
+        "&7短射程槍",
+        "&7快速重裝.",
+        "&7對近距離戰鬥有用.",
+        "&c射程: 10",
+        "&c傷害: 3格血",
+        "&c重新裝載: 0.5秒"
     );
 
     public static final SlimefunItemStack MACHINE_GUN = new SlimefunItemStack(
         "GUN_MACHINE_GUN",
         Material.CROSSBOW,
-        "&7Machine Gun",
+        "&7機槍",
         "&7Pew pew pew",
-        "&cRange: 30",
-        "&cMinimum Range: 5",
-        "&cDamage: 3 hearts",
-        "&cCooldown: 0.15 seconds"
+        "&c射程: 30",
+        "&c最短射程: 5",
+        "&c傷害: 3格血",
+        "&c重新裝載: 0.15秒"
     );
 
     public static final SlimefunItemStack MINIGUN = new SlimefunItemStack(
         "GUN_MINIGUN",
         Material.CROSSBOW,
-        "&7Minigun",
-        "&7The ultimate device",
-        "&7to pepper your friends with.",
-        "&cRange: 40",
-        "&cMinimum Range: 5",
-        "&cDamage: 4 hearts",
-        "&cCooldown: none"
+        "&7迷你砲機槍",
+        "&7與你的朋友相處",
+        "&7的終極設備.",
+        "&c射程: 40",
+        "&c最短射程: 5",
+        "&c傷害: 4格血",
+        "&c重新裝載: 無"
     );
 
     public static final SlimefunItemStack RIFLE = new SlimefunItemStack(
         "GUN_RIFLE",
         Material.CROSSBOW,
-        "&7Rifle",
-        "&7A standard rifle.",
-        "&cRange: 40",
-        "&cMinimum Range: 5",
-        "&cDamage: 4 hearts",
-        "&cCooldown: 0.75 seconds"
+        "&7步槍",
+        "&7標準步槍.",
+        "&c射程: 40",
+        "&c最短射程: 5",
+        "&c傷害: 4格血",
+        "&c重新裝載: 0.75秒"
     );
 
     public static final SlimefunItemStack SHOTGUN = new SlimefunItemStack(
         "GUN_SHOTGUN",
         Material.CROSSBOW,
-        "&7Shotgun",
-        "&7Less range than a",
-        "&7rifle, but more damage.",
-        "&cRange: 25",
-        "&cMinimum Range: 5",
-        "&cDamage: 6.5 hearts",
-        "&cCooldown: 1.25 seconds"
+        "&7散彈槍",
+        "&7射程比步槍短,",
+        "&7但傷害更高.",
+        "&c射程: 25",
+        "&c最短射程: 5",
+        "&c傷害: 6.5格血",
+        "&c重新裝載: 1.25秒"
     );
 
     public static final SlimefunItemStack ASSAULT_RIFLE = new SlimefunItemStack(
         "GUN_ASSAULT_RIFLE",
         Material.CROSSBOW,
-        "&7Assault Rifle",
-        "&7A derivative of",
-        "&7the rifle, the assault",
-        "&7rifle is the standard",
-        "&7military weapon.",
-        "&cRange: 50",
-        "&cMinimum Range: 5",
-        "&cDamage: 6.5 hearts",
-        "&cCooldown: 0.3 seconds"
+        "&7突擊步槍",
+        "&7突擊步槍是步槍",
+        "&7的衍生品,",
+        "&7標準的軍事武器",
+        "&c射程: 50",
+        "&c最短射程: 5",
+        "&c傷害: 6.5格血",
+        "&c重新裝載: 0.3秒"
     );
 
     public static final SlimefunItemStack SNIPER = new SlimefunItemStack(
         "GUN_SNIPER",
         Material.CROSSBOW,
-        "&7Sniper Rifle",
-        "&7The ultimate long-range",
-        "&7gun, the sniper is very powerful.",
-        "&cRange: 130",
-        "&cMinimum Range: 50",
-        "&cDamage: 11 hearts",
-        "&cCooldown: 8 seconds"
+        "&7狙擊步槍",
+        "&7終極長距離槍,",
+        "&7狙擊手非常強大.",
+        "&c射程: 130",
+        "&c最短射程: 50",
+        "&c傷害: 11格血",
+        "&c重新裝載: 8秒"
     );
 }

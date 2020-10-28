@@ -12,8 +12,8 @@ import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import lombok.Getter;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
-import org.bstats.bukkit.Metrics;
+//import me.mrCookieSlime.Slimefun.cscorelib2.updater.GitHubBuildsUpdater;
+//import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -30,16 +30,18 @@ public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
     @Override
     public void onEnable() {
         getLogger().info("Slimefun Warfare enabled.");
+        getLogger().warning("此為繁體翻譯版 非官方版本");
+        getLogger().warning("請勿在黏液科技伺服器官方問!");
 
         getServer().getPluginManager().registerEvents(new BulletListener(), this);
 
         instance = this;
 
-        new Metrics(this, 9227);
+        //new Metrics(this, 9227);
 
-        if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-            new GitHubBuildsUpdater(this, getFile(), "Seggan/SlimefunWarfare/master").start();
-        }
+        //if (getConfig().getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
+        //    new GitHubBuildsUpdater(this, getFile(), "Seggan/SlimefunWarfare/master").start();
+        //}
 
         new SlimesteelIngot().register(this);
         new SlimefunItem(
