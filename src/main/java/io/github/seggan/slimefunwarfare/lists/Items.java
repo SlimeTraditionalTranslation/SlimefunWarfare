@@ -12,21 +12,21 @@ import org.bukkit.NamespacedKey;
 
 public final class Items {
     public static final Category sfwarfareCategory = new Category(
-            new NamespacedKey(SlimefunWarfare.getInstance(), "slimefunwarfare"),
-            new CustomItem(Material.DIAMOND_SWORD, "黏液戰爭")
+        new NamespacedKey(SlimefunWarfare.getInstance(), "slimefunwarfare"),
+        new CustomItem(Material.DIAMOND_SWORD, "黏液戰爭")
     );
     public static final Category sfwarfareGunsCategory = new Category(
-            new NamespacedKey(SlimefunWarfare.getInstance(), "slimefunwarfare_guns"),
-            new CustomItem(Material.CROSSBOW, "黏液戰爭 - 槍")
+        new NamespacedKey(SlimefunWarfare.getInstance(), "slimefunwarfare_guns"),
+        new CustomItem(Material.CROSSBOW, "黏液戰爭 - 槍")
     );
 
     public static final SlimefunItemStack SLIMESTEEL = new SlimefunItemStack(
-            "SLIMESTEEL_INGOT",
-            Material.IRON_INGOT,
-            "&a黏液鋼錠",
-            "",
-            "堅硬但有彈性,這種合金",
-            "非常適合各種應用"
+        "SLIMESTEEL_INGOT",
+        Material.IRON_INGOT,
+        "&a黏液鋼錠",
+        "",
+        "堅硬但有彈性,這種合金",
+        "非常適合各種應用"
     );
 
     public static final SlimefunItemStack REINFORCED_SLIMESTEEL = new SlimefunItemStack(
@@ -56,7 +56,7 @@ public final class Items {
         "&7進階槍管"
     );
 
-    public static final SlimefunItemStack BULLET_FACTORY  = new SlimefunItemStack(
+    public static final SlimefunItemStack BULLET_FACTORY = new SlimefunItemStack(
         "BULLET_FACTORY",
         Material.SMOKER,
         "&7子彈工廠",
