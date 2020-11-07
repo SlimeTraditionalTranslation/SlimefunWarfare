@@ -66,7 +66,7 @@ public final class Guns {
     public static final SlimefunItemStack SHOTGUN = new SlimefunItemStack(
         "GUN_SHOTGUN",
         Material.CROSSBOW,
-        "&7散彈槍",
+        "&7霰彈槍",
         "&7射程比步槍短,",
         "&7但傷害更高.",
         "&c射程: 25",
