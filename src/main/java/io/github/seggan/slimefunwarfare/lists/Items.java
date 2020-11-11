@@ -87,10 +87,25 @@ public final class Items {
         "&7x2傷害"
     );
 
+    public static final SlimefunItemStack TRINITROBULLETENE = new SlimefunItemStack(
+        "TRINITROBULLETENE_BULLET",
+        Material.GOLD_NUGGET,
+        "&6三硝基丁烯",
+        "&7使命中生物時著火",
+        "&7x2.75傷害"
+    );
+
     public static final SlimefunItemStack GUN_CASE = new SlimefunItemStack(
         "GUN_CASE",
         Material.CROSSBOW,
         "&7槍外殼",
         "&7所有槍的基礎"
+    );
+
+    public static final SlimefunItemStack PYRO_POWDER = new SlimefunItemStack(
+        "PYRO_POWDER",
+        Material.REDSTONE,
+        "&4火焰兵粉",
+        "&7一種極易爆炸的物質"
     );
 }
