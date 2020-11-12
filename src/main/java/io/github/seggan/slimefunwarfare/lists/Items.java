@@ -19,6 +19,10 @@ public final class Items {
         new NamespacedKey(SlimefunWarfare.getInstance(), "slimefunwarfare_guns"),
         new CustomItem(Material.CROSSBOW, "黏液戰爭 - 槍")
     );
+    public static final Category sfwarfareExplosivesCategory = new Category(
+        new NamespacedKey(SlimefunWarfare.getInstance(), "slimefunwarfare_explosives"),
+        new CustomItem(Material.TNT, "黏液戰爭 - 爆炸物")
+    );
 
     public static final SlimefunItemStack SLIMESTEEL = new SlimefunItemStack(
         "SLIMESTEEL_INGOT",
@@ -56,13 +60,20 @@ public final class Items {
         "&7進階槍管"
     );
 
-    public static final SlimefunItemStack BULLET_FACTORY = new SlimefunItemStack(
-        "BULLET_FACTORY",
+    public static final SlimefunItemStack BULLET_PRESS = new SlimefunItemStack(
+        "BULLET_PRESS",
         Material.SMOKER,
-        "&7子彈工廠",
+        "&7子彈製造機",
         LoreBuilder.powerPerSecond(16),
         LoreBuilder.powerBuffer(32),
         LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
+    );
+
+    public static final SlimefunItemStack IRON_BULLET = new SlimefunItemStack(
+        "IRON_BULLET",
+        Material.IRON_NUGGET,
+        "&7鐵子彈",
+        "&7x0.75傷害"
     );
 
     public static final SlimefunItemStack LEAD_BULLET = new SlimefunItemStack(
