@@ -10,35 +10,35 @@ public final class Explosives {
     public static final SlimefunItemStack NITROGEN_TRIIODIDE = new SlimefunItemStack(
         "NITROGEN_TRIIODIDE",
         Material.PURPLE_DYE,
-        "&5Nitrogen Triiodide",
-        "&7A material for grenades"
+        "&5三碘化氮",
+        "&7一種手榴彈的材料"
     );
 
     public static final SlimefunItemStack AZIDOAZIDE_AZIDE = new SlimefunItemStack(
         "AZIDOAZIDE_AZIDE",
         Material.SUGAR,
-        "&eAzidoazide Azide",
-        "&7A material for grenades"
+        "&e疊氮化碳",
+        "&7一種手榴彈的材料"
     );
 
     public static final SlimefunItemStack ARSENIC = new SlimefunItemStack(
         "ARSENIC",
         Material.GUNPOWDER,
-        "&7Arsenic",
-        "&7A material for grenades"
+        "&7砷",
+        "&7一種手榴彈的材料"
     );
 
     public static final SlimefunItemStack EMPTY_GRENADE = new SlimefunItemStack(
         "GRENADE",
         Material.SNOWBALL,
-        "&7Chemical Grenade",
-        "&7Contents: none"
+        "&7化學手榴彈",
+        "&7內容物: 無"
     );
 
     public static final SlimefunItemStack REINFORCED_CONCRETE = new SlimefunItemStack(
         "REINFORCED_CONCRETE",
         Material.GRAY_CONCRETE,
-        "&7Reinforced Concrete",
-        "&7A blast-resistant (not blastproof) concrete"
+        "&7鋼筋混凝土",
+        "&7防爆的混凝土"
     );
 }

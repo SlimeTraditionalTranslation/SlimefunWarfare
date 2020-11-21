@@ -73,7 +73,7 @@ public final class Items {
     public static final SlimefunItemStack AIR_LIQUEFIER = new SlimefunItemStack(
         "AIR_LIQUEFIER",
         Material.BEACON,
-        "&bAir Liquefier",
+        "&b空氣液化器",
         LoreBuilder.powerPerSecond(64),
         LoreBuilder.powerBuffer(128),
         LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
@@ -82,7 +82,7 @@ public final class Items {
     public static final SlimefunItemStack EXPLOSIVE_SYNTHESIZER = new SlimefunItemStack(
         "EXPLOSIVE_SYNTHESIZER",
         Material.TNT,
-        "&4Explosive Synthesizer",
+        "&4爆炸物合成器",
         LoreBuilder.powerPerSecond(64),
         LoreBuilder.powerBuffer(128),
         LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE)
@@ -142,21 +142,21 @@ public final class Items {
     public static final SlimefunItemStack LIQUID_AIR = new SlimefunItemStack(
         "LIQUID_AIR",
         HeadTexture.TIN_CAN,
-        "&fLiquid Air",
-        "&7Don't touch!"
+        "&f液態空氣",
+        "&7不要碰!"
     );
 
     public static final SlimefunItemStack LIQUID_NITROGEN = new SlimefunItemStack(
         "LIQUID_NITROGEN",
         HeadTexture.TIN_CAN,
-        "&fLiquid Nitrogen",
-        "&7Ice cream anyone?"
+        "&f液氮",
+        "&7誰要點冰淇淋?"
     );
 
     public static final SlimefunItemStack PURIFIED_LIQUID_NITROGEN = new SlimefunItemStack(
         "PURIFIED_LIQUID_NITROGEN",
         HeadTexture.TIN_CAN,
-        "&fPurified Liquid Nitrogen",
-        "&7As pure as can be"
+        "&f純化液氮",
+        "&7盡可能純淨"
     );
 }
