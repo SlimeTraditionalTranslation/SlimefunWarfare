@@ -2,6 +2,8 @@ package io.github.seggan.slimefunwarfare;
 
 import io.github.seggan.slimefunwarfare.items.Gun;
 import io.github.seggan.slimefunwarfare.listeners.BulletListener;
+import io.github.seggan.slimefunwarfare.listeners.ConcreteListener;
+import io.github.seggan.slimefunwarfare.listeners.GrenadeListener;
 import io.github.seggan.slimefunwarfare.listeners.PyroListener;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import lombok.Getter;
@@ -19,14 +21,21 @@ public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
     @Getter
     private static SlimefunWarfare instance = null;
 
+    @Getter
+    private static ConfigSettings configSettings = null;
+
     @Override
     public void onEnable() {
         getLogger().info("Slimefun Warfare enabled.");
         getLogger().warning("此為繁體翻譯版 非官方版本");
         getLogger().warning("請勿在黏液科技伺服器官方問!");
 
+        saveDefaultConfig();
+
         getServer().getPluginManager().registerEvents(new BulletListener(), this);
         getServer().getPluginManager().registerEvents(new PyroListener(), this);
+        getServer().getPluginManager().registerEvents(new GrenadeListener(), this);
+        getServer().getPluginManager().registerEvents(new ConcreteListener(), this);
 
         instance = this;
 
@@ -36,9 +45,12 @@ public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
         //    new GitHubBuildsUpdater(this, getFile(), "Seggan/SlimefunWarfare/master").start();
         //}
 
+        configSettings = new ConfigSettings(this);
+
         Setup.setupItems(this);
         Setup.setupBullets(this);
         Setup.setupGuns(this);
+        Setup.setupExplosives(this);
 
         // Gun autoshoot task
         Bukkit.getScheduler().runTaskTimer(this, () -> {
