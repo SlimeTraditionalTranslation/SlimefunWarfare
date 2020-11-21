@@ -3,14 +3,19 @@ package io.github.seggan.slimefunwarfare;
 import lombok.Getter;
 import org.bukkit.configuration.file.FileConfiguration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ConfigSettings {
 
-    private SlimefunWarfare plugin;
+    private final SlimefunWarfare plugin;
 
     @Getter
-    private String[] blacklistedWorlds;
+    private final List<String> blacklistedWorlds = new ArrayList<>();
     @Getter
-    private int concreteExplodePercent;
+    private int concreteExplodePercent = 10;
+    @Getter
+    private boolean autoshoot = true;
 
     ConfigSettings(SlimefunWarfare plugin) {
         this.plugin = plugin;
@@ -20,5 +25,6 @@ public class ConfigSettings {
         FileConfiguration config = plugin.getConfig();
 
         concreteExplodePercent = config.getInt("explosions.concrete-explode-chance");
+        autoshoot = config.getBoolean("options.autoshoot");
     }
 }
