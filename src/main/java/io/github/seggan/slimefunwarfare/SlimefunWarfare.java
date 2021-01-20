@@ -1,6 +1,7 @@
 package io.github.seggan.slimefunwarfare;
 
 import io.github.seggan.slimefunwarfare.items.Gun;
+import io.github.seggan.slimefunwarfare.listeners.BetterExplosiveListener;
 import io.github.seggan.slimefunwarfare.listeners.BulletListener;
 import io.github.seggan.slimefunwarfare.listeners.ConcreteListener;
 import io.github.seggan.slimefunwarfare.listeners.GrenadeListener;
@@ -36,6 +37,7 @@ public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
         getServer().getPluginManager().registerEvents(new PyroListener(), this);
         getServer().getPluginManager().registerEvents(new GrenadeListener(), this);
         getServer().getPluginManager().registerEvents(new ConcreteListener(), this);
+        getServer().getPluginManager().registerEvents(new BetterExplosiveListener(), this);
 
         instance = this;
 
