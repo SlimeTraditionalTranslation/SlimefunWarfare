@@ -3,36 +3,35 @@ package io.github.seggan.slimefunwarfare.machines;
 import io.github.seggan.slimefunwarfare.lists.Categories;
 import io.github.seggan.slimefunwarfare.lists.items.Explosives;
 import io.github.seggan.slimefunwarfare.lists.items.Items;
-import io.github.thebusybiscuit.slimefun4.core.attributes.RecipeDisplayItem;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.abstractItems.AContainer;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
-public class AirLiquefier extends AContainer implements RecipeDisplayItem {
+public class Boominator9000 extends AContainer {
 
-    public AirLiquefier() {
-        super(Categories.GENERAL, Items.AIR_LIQUEFIER, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
-            new ItemStack(Material.PACKED_ICE), SlimefunItems.COOLING_UNIT, new ItemStack(Material.PACKED_ICE),
-            SlimefunItems.COOLING_UNIT, SlimefunItems.FREEZER, SlimefunItems.COOLING_UNIT,
-            new ItemStack(Material.PACKED_ICE), SlimefunItems.COOLING_UNIT, new ItemStack(Material.PACKED_ICE)
+    public Boominator9000() {
+        super(Categories.EXPLOSIVES, Items.BOOMINATOR_9000, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+            SlimefunItems.REINFORCED_PLATE, SlimefunItems.REINFORCED_CLOTH, SlimefunItems.REINFORCED_PLATE,
+            new ItemStack(Material.BOWL), Items.REINFORCED_SLIMESTEEL, new ItemStack(Material.BOWL),
+            SlimefunItems.REINFORCED_PLATE, SlimefunItems.REINFORCED_CLOTH, SlimefunItems.REINFORCED_PLATE
         });
     }
 
     @Override
     protected void registerDefaultRecipes() {
-        registerRecipe(5, SlimefunItems.TIN_CAN, Explosives.LIQUID_AIR);
+        registerRecipe(600, SlimefunItems.BOOSTED_URANIUM, Explosives.ENRICHED_URANIUM);
     }
 
     @Override
     public ItemStack getProgressBar() {
-        return new ItemStack(Material.STRUCTURE_VOID);
+        return new ItemStack(Material.TNT);
     }
 
     @Override
     public int getEnergyConsumption() {
-        return 64;
+        return 1024;
     }
 
     @Override
@@ -42,11 +41,11 @@ public class AirLiquefier extends AContainer implements RecipeDisplayItem {
 
     @Override
     public String getMachineIdentifier() {
-        return "AIR_LIQUEFIER";
+        return "BOOMINATOR_9000";
     }
 
     @Override
     public int getCapacity() {
-        return 128;
+        return 2048;
     }
 }

@@ -1,8 +1,9 @@
-package io.github.seggan.slimefunwarfare.items;
+package io.github.seggan.slimefunwarfare.items.guns;
 
 import io.github.seggan.slimefunwarfare.SlimefunWarfare;
 import io.github.seggan.slimefunwarfare.Util;
-import io.github.seggan.slimefunwarfare.lists.Items;
+import io.github.seggan.slimefunwarfare.items.Bullet;
+import io.github.seggan.slimefunwarfare.lists.Categories;
 import io.github.thebusybiscuit.slimefun4.core.attributes.DamageableItem;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import lombok.Getter;
@@ -21,19 +22,18 @@ import org.bukkit.util.Vector;
 import java.util.HashMap;
 import java.util.UUID;
 
+@Getter
 public class Gun extends SlimefunItem implements DamageableItem {
 
-    @Getter
     private final HashMap<UUID, Long> LAST_USES = new HashMap<>();
 
     private final int range;
     private final int minRange;
     private final int damageDealt;
-    @Getter
     private final int cooldown;
 
     public Gun(SlimefunItemStack item, ItemStack[] recipe, int range, int damage, double cooldown) {
-        super(Items.sfwarfareGunsCategory, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
+        super(Categories.GUNS, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
 
         this.range = range;
         minRange = 0;
@@ -44,7 +44,7 @@ public class Gun extends SlimefunItem implements DamageableItem {
     }
 
     public Gun(SlimefunItemStack item, ItemStack[] recipe, int range, int minRange, int damage, double cooldown) {
-        super(Items.sfwarfareGunsCategory, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
+        super(Categories.GUNS, item, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
 
         this.range = range;
         this.minRange = SlimefunWarfare.getConfigSettings().isMinRangeOn() ? minRange : 0;
@@ -57,7 +57,8 @@ public class Gun extends SlimefunItem implements DamageableItem {
     public ItemUseHandler getItemHandler() {
         return e -> {
             e.cancel();
-            shoot(e.getPlayer());
+            Player p = e.getPlayer();
+            shoot(p);
         };
     }
 

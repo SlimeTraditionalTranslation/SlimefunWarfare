@@ -1,8 +1,8 @@
 package io.github.seggan.slimefunwarfare.items;
 
 import io.github.seggan.slimefunwarfare.SlimefunWarfare;
-import io.github.seggan.slimefunwarfare.lists.Explosives;
-import io.github.seggan.slimefunwarfare.lists.Items;
+import io.github.seggan.slimefunwarfare.lists.Categories;
+import io.github.seggan.slimefunwarfare.lists.items.Explosives;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.utils.ChatUtils;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
@@ -20,10 +20,11 @@ public class Grenade extends SlimefunItem {
     private final SlimefunItemStack chemical;
 
     public Grenade(SlimefunItemStack chemical) {
-        super(Items.sfwarfareExplosivesCategory, new SlimefunItemStack(
+        super(Categories.EXPLOSIVES, new SlimefunItemStack(
             chemical.getItemId() + "_GRENADE",
             Material.SNOWBALL,
-            "&7化學手榴彈",
+            "&f化學手榴彈",
+            "",
             "&7內容物: " + ChatUtils.removeColorCodes(chemical.getDisplayName())
         ), RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
             Explosives.EMPTY_GRENADE, chemical, null,
