@@ -55,7 +55,8 @@ public final class Explosives {
         "&fFLOX",
         "",
         "&7燃料+液態氧. 右鍵來去太空",
-        "&c請確保點兩次空白鍵在你傳送的時候繼續落下"
+        "&c請確保點兩次空白鍵當",
+        "&c你在傳送的時候繼續落下"
     );
 
     public static final SlimefunItemStack THIOACETONE = new SlimefunItemStack(
