@@ -45,8 +45,8 @@
                 <configuration>
                     <relocations>
                         <relocation>
-                            <pattern>org.bstats</pattern>
-                            <shadedPattern>io.github.seggan.slimefunwarfare</shadedPattern>
+                            <pattern>io.github.mooy1.infinitylib</pattern>
+                            <shadedPattern>io.github.seggan.slimefunwarfare.infinitylib</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -95,9 +95,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.bstats</groupId>
-            <artifactId>bstats-bukkit</artifactId>
-            <version>1.7</version>
+            <groupId>io.github.mooy1</groupId>
+            <artifactId>InfinityLib</artifactId>
+            <version>ed2b94b</version>
             <scope>compile</scope>
         </dependency>
 
