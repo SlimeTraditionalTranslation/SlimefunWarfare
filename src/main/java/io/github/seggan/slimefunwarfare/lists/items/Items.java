@@ -1,10 +1,11 @@
 package io.github.seggan.slimefunwarfare.lists.items;
 
+import io.github.seggan.slimefunwarfare.lists.Heads;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
-import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
+import org.bukkit.Color;
 import org.bukkit.Material;
 
 public final class Items {
@@ -194,5 +195,90 @@ public final class Items {
         "&b能量整流器",
         "",
         "&7將電能轉化成純能源"
+    );
+
+    public static final SlimefunItemStack UNPATENTABLIUM = new SlimefunItemStack(
+        "UNPATENTABLIUM",
+        Material.LIGHT_BLUE_DYE,
+        "&b非專利能量元素",
+        "",
+        "&7對於某些原因,",
+        "&7聯邦政府不會讓你",
+        "&7擁有此強大的",
+        "&7能源來源專利"
+    );
+
+    public static final SlimefunItemStack POWER_SUIT_GENERATOR = new SlimefunItemStack(
+        "POWER_SUIT_GENERATOR",
+        "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTFkNWExZmY3Zjk3NmMxYzJlYmQ0ZWY5YTkwYWQ5MTQ2Nzk1YzFjNDRmZGFlNjI5NjQ5NDg0MzRhNzI1NyJ9fX0=",
+        "&6動力服發電機",
+        "",
+        "&7任何動力服的",
+        "&7主要中心能源"
+    );
+
+    public static final SlimefunItemStack ELEMENT_FORGE = new SlimefunItemStack(
+        "ELEMENT_FORGE",
+        Material.SMITHING_TABLE,
+        "&c元素鍛造台",
+        "",
+        "&7用於製作新的元素",
+        "&c多重方快結構"
+    );
+
+    public static final SlimefunItemStack POWER_SUIT_HELMET = new SlimefunItemStack(
+        "POWER_SUIT_HELMET",
+        Heads.SUIT_HELMET,
+        "&4動力服頭盔",
+        "",
+        "&7強大裝甲的一部份",
+        "&7被設計為可以修改的.",
+        LoreBuilder.powerPerSecond(10),
+        LoreBuilder.powerCharged(0, 1000)
+    );
+    public static final SlimefunItemStack POWER_SUIT_CHESTPLATE = new SlimefunItemStack(
+        "POWER_SUIT_CHESTPLATE",
+        Material.LEATHER_CHESTPLATE, Color.MAROON,
+        "&4動力服胸甲",
+        "",
+        "&7強大裝甲的一部份",
+        "&7被設計為可以修改的.",
+        LoreBuilder.powerPerSecond(10),
+        LoreBuilder.powerCharged(0, 1000)
+    );
+    public static final SlimefunItemStack POWER_SUIT_LEGGINGS = new SlimefunItemStack(
+        "POWER_SUIT_LEGGINGS",
+        Material.LEATHER_LEGGINGS, Color.MAROON,
+        "&4動力服護腿",
+        "",
+        "&7強大裝甲的一部份",
+        "&7被設計為可以修改的.",
+        LoreBuilder.powerPerSecond(10),
+        LoreBuilder.powerCharged(0, 1000)
+    );
+    public static final SlimefunItemStack POWER_SUIT_BOOTS = new SlimefunItemStack(
+        "POWER_SUIT_BOOTS",
+        Material.LEATHER_BOOTS, Color.MAROON,
+        "&4動力服靴子",
+        "",
+        "&7強大裝甲的一部份",
+        "&7被設計為可以修改的.",
+        LoreBuilder.powerPerSecond(10),
+        LoreBuilder.powerCharged(0, 1000)
+    );
+
+    public static final SlimefunItemStack MODULE_MANIPULATOR = new SlimefunItemStack(
+        "MODULE_MANIPULATOR",
+        Material.CRAFTING_TABLE,
+        "&f模塊操縱器",
+        "",
+        "&7允許你安裝, 解除安裝",
+        "&7和查看模塊"
+    );
+
+    public static final SlimefunItemStack MODULE_CASE = new SlimefunItemStack(
+        "MODULE_CASE",
+        Heads.MODULE,
+        "&6模塊框架"
     );
 }

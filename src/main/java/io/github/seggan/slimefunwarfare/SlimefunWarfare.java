@@ -1,35 +1,56 @@
 package io.github.seggan.slimefunwarfare;
 
+import com.google.common.collect.Sets;
 import io.github.mooy1.infinitylib.core.ConfigUtils;
 import io.github.mooy1.infinitylib.core.PluginUtils;
 import io.github.seggan.slimefunwarfare.items.guns.Gun;
+import io.github.seggan.slimefunwarfare.items.powersuits.ArmorPiece;
+import io.github.seggan.slimefunwarfare.items.powersuits.Module;
+import io.github.seggan.slimefunwarfare.items.powersuits.PowerSuit;
 import io.github.seggan.slimefunwarfare.listeners.BetterExplosiveListener;
 import io.github.seggan.slimefunwarfare.listeners.BulletListener;
 import io.github.seggan.slimefunwarfare.listeners.ConcreteListener;
 import io.github.seggan.slimefunwarfare.listeners.GrenadeListener;
 import io.github.seggan.slimefunwarfare.listeners.HitListener;
+import io.github.seggan.slimefunwarfare.listeners.ModuleListener;
 import io.github.seggan.slimefunwarfare.listeners.PyroListener;
 import io.github.seggan.slimefunwarfare.listeners.SpaceListener;
+import io.github.seggan.slimefunwarfare.lists.Categories;
 import io.github.seggan.slimefunwarfare.spacegenerators.SpaceGenerator;
+import io.github.thebusybiscuit.slimefun4.api.MinecraftVersion;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
+import io.github.thebusybiscuit.slimefun4.utils.ChargeUtils;
 import lombok.Getter;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import org.bukkit.Bukkit;
 import org.bukkit.GameRule;
+import org.bukkit.Particle;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
 import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
 
-public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
+import javax.annotation.Nonnull;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.UUID;
+
+public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon, Listener {
 
     @Getter
     private static SlimefunWarfare instance = null;
+
+    private static final Set<UUID> flying = new HashSet<>();
 
     @Override
     public void onEnable() {
@@ -45,6 +66,10 @@ public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
         PluginUtils.registerListener(new BetterExplosiveListener());
         PluginUtils.registerListener(new SpaceListener());
         PluginUtils.registerListener(new HitListener());
+        PluginUtils.registerListener(new ModuleListener());
+        PluginUtils.registerListener(this);
+
+        Categories.setup(this);
 
         Setup.setupItems(this);
         Setup.setupMelee(this);
@@ -52,6 +77,9 @@ public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
         Setup.setupGuns(this);
         Setup.setupExplosives(this);
         Setup.setupSpace(this);
+        Setup.setupSuits(this);
+
+        Module.setup(this);
 
         for (World world : Bukkit.getWorlds()) {
             String name = world.getName();
@@ -74,7 +102,7 @@ public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
 
         if (ConfigUtils.getBoolean("guns.autoshoot", true)) {
             // Gun autoshoot task
-            Bukkit.getScheduler().runTaskTimer(this, () -> {
+            PluginUtils.scheduleRepeatingSync(() -> {
                 for (Player p : getServer().getOnlinePlayers()) {
                     if (p.isSneaking() && !p.isFlying()) {
                         ItemStack stack = p.getInventory().getItemInMainHand();
@@ -95,8 +123,80 @@ public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
                         gun.shoot(p, stack);
                     }
                 }
-            }, 0, 1);
+            }, 1);
         }
+
+        PluginUtils.scheduleRepeatingSync(() -> {
+            for (Player p : getServer().getOnlinePlayers()) {
+                UUID uuid = p.getUniqueId();
+                for (ItemStack stack : p.getInventory().getArmorContents()) {
+                    Util.ifPowerSuit(stack, suit -> {
+                        for (Module module : PowerSuit.getModules(stack)) {
+                            ItemMeta im = stack.getItemMeta();
+
+                            PotionEffect effect = module.getEffect();
+                            if (effect != null && ChargeUtils.getCharge(im) >= module.getPower()) {
+                                p.addPotionEffect(effect);
+                                suit.removeItemCharge(stack, module.getPower());
+                            }
+
+                            if (module == Module.MINI_JETS) {
+                                if (!p.getAllowFlight()) {
+                                    p.setAllowFlight(true);
+                                    flying.add(uuid);
+                                }
+                                if (p.isFlying()) {
+                                    if (ChargeUtils.getCharge(im) < module.getPower()) {
+                                        p.setAllowFlight(false);
+                                        flying.remove(uuid);
+                                    } else {
+                                        suit.removeItemCharge(stack, module.getPower());
+                                    }
+                                }
+                            } else {
+                                if (flying.contains(p.getUniqueId()) && suit.getType() == ArmorPiece.LEGS) {
+                                    p.setAllowFlight(false);
+                                    flying.remove(uuid);
+                                }
+                            }
+
+                            suit.addItemCharge(stack, 10);
+                        }
+                    });
+                }
+            }
+        }, 20);
+
+        if (SlimefunPlugin.getMinecraftVersion().isAtLeast(MinecraftVersion.MINECRAFT_1_16) &&
+            ConfigUtils.getBoolean("suits.flight-particles", true)) {
+            PluginUtils.scheduleRepeatingSync(() -> {
+                for (UUID uuid : flying) {
+                    Player p = getServer().getPlayer(uuid);
+                    if (p == null) {
+                        flying.remove(uuid);
+                        return;
+                    }
+                    if (p.isFlying()) {
+                        p.getWorld().spawnParticle(Particle.SOUL_FIRE_FLAME, p.getLocation().subtract(0, 1, 0), 20, 0.5, 0.5, 0.5);
+                    }
+                }
+            }, 4);
+        }
+    }
+
+    @EventHandler
+    public void onPlayerJoin(@Nonnull PlayerJoinEvent e) {
+        Player p = e.getPlayer();
+        ItemStack boots = p.getInventory().getBoots();
+        if (p.getAllowFlight() && SlimefunItem.getByItem(boots) instanceof PowerSuit &&
+            Sets.newHashSet(PowerSuit.getModules(boots)).contains(Module.MINI_JETS)) {
+            flying.add(p.getUniqueId());
+        }
+    }
+
+    @EventHandler
+    public void onPlayerLeave(@Nonnull PlayerQuitEvent e) {
+        flying.remove(e.getPlayer().getUniqueId());
     }
 
     @Override
@@ -104,6 +204,7 @@ public class SlimefunWarfare extends JavaPlugin implements SlimefunAddon {
         getLogger().info("Slimefun Warfare disabled.");
     }
 
+    @Nonnull
     public JavaPlugin getJavaPlugin() {
         return this;
     }

@@ -1,17 +1,23 @@
 package io.github.seggan.slimefunwarfare;
 
-import lombok.NonNull;
+import io.github.seggan.slimefunwarfare.items.powersuits.PowerSuit;
+import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
+import org.bukkit.inventory.ItemStack;
+
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import java.util.function.Consumer;
 
 public final class Util {
 
     private Util() {}
 
-    @NonNull
-    public static Location deserializeLocation(@NonNull String s) {
-        if (s == null || s.trim().equals("")) {
+    @Nonnull
+    public static Location deserializeLocation(@Nonnull String s) {
+        if (s.trim().equals("")) {
             throw new IllegalArgumentException("Invalid location deserialization parameter, got " + s);
         }
 
@@ -28,11 +34,18 @@ public final class Util {
         throw new IllegalArgumentException("Invalid location deserialization parameter, got " + s);
     }
 
-    @NonNull
-    public static String serializeLocation(@NonNull Location loc) {
+    @Nonnull
+    public static String serializeLocation(@Nonnull Location loc) {
         return loc.getWorld().getName() +
             ":" + loc.getX() +
             ":" + loc.getY() +
             ":" + loc.getZ();
+    }
+
+    public static void ifPowerSuit(@Nullable ItemStack stack, @Nonnull Consumer<PowerSuit> callback) {
+        SlimefunItem sfitem = SlimefunItem.getByItem(stack);
+        if (sfitem instanceof PowerSuit) {
+            callback.accept((PowerSuit) sfitem);
+        }
     }
 }
