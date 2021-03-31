@@ -233,7 +233,7 @@ public final class Items {
         "",
         "&7強大裝甲的一部份",
         "&7被設計為可以修改的.",
-        LoreBuilder.powerPerSecond(10),
+        LoreBuilder.powerPerSecond(5),
         LoreBuilder.powerCharged(0, 1000)
     );
     public static final SlimefunItemStack POWER_SUIT_CHESTPLATE = new SlimefunItemStack(
@@ -243,7 +243,7 @@ public final class Items {
         "",
         "&7強大裝甲的一部份",
         "&7被設計為可以修改的.",
-        LoreBuilder.powerPerSecond(10),
+        LoreBuilder.powerPerSecond(5),
         LoreBuilder.powerCharged(0, 1000)
     );
     public static final SlimefunItemStack POWER_SUIT_LEGGINGS = new SlimefunItemStack(
@@ -253,7 +253,7 @@ public final class Items {
         "",
         "&7強大裝甲的一部份",
         "&7被設計為可以修改的.",
-        LoreBuilder.powerPerSecond(10),
+        LoreBuilder.powerPerSecond(5),
         LoreBuilder.powerCharged(0, 1000)
     );
     public static final SlimefunItemStack POWER_SUIT_BOOTS = new SlimefunItemStack(
@@ -263,7 +263,7 @@ public final class Items {
         "",
         "&7強大裝甲的一部份",
         "&7被設計為可以修改的.",
-        LoreBuilder.powerPerSecond(10),
+        LoreBuilder.powerPerSecond(5),
         LoreBuilder.powerCharged(0, 1000)
     );
 

@@ -16,9 +16,9 @@ public final class Guns {
         "&7短射程槍",
         "&7快速重裝.",
         "&7對近距離戰鬥有用.",
-        "&c射程: 7",
-        "&c傷害: 2格血",
-        "&c重新裝載: 0.75秒"
+        "&c射程: 10",
+        "&c傷害: 3格血",
+        "&c重新裝載: 0.5秒"
     );
 
     public static final SlimefunItemStack REVOLVER = new SlimefunItemStack(
@@ -31,7 +31,7 @@ public final class Guns {
         "&7對近距離戰鬥有用.",
         "&c射程: 10",
         "&c傷害: 3格血",
-        "&c重新裝載: 0.5秒"
+        "&c重新裝載: 0.3秒"
     );
 
     public static final SlimefunItemStack MACHINE_GUN = new SlimefunItemStack(
