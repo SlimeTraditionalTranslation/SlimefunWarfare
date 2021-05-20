@@ -42,6 +42,7 @@ import javax.annotation.Nullable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
+import java.util.logging.Level;
 
 public class SlimefunWarfare extends AbstractAddon implements SlimefunAddon, Listener {
 
@@ -70,6 +71,10 @@ public class SlimefunWarfare extends AbstractAddon implements SlimefunAddon, Lis
         Setup.setupSuits(this);
 
         Module.setup(this);
+
+        if (getJavaVersion() < 11) {
+            log(Level.WARNING, "你所使用的Java版本小於11! 請使用Java 11 或更高的版本");
+        }
 
         for (World world : Bukkit.getWorlds()) {
             String name = world.getName();
@@ -220,6 +225,19 @@ public class SlimefunWarfare extends AbstractAddon implements SlimefunAddon, Lis
         }
 
         suit.addItemCharge(stack, 5);
+    }
+
+    private static int getJavaVersion() {
+        String version = System.getProperty("java.version");
+        if (version.startsWith("1.")) {
+            version = version.substring(2, 3);
+        } else {
+            int dot = version.indexOf(".");
+            if( dot != -1) {
+                version = version.substring(0, dot);
+            }
+        }
+        return Integer.parseInt(version);
     }
 
     public static SlimefunWarfare inst() {
