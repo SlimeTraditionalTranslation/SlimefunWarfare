@@ -16,14 +16,8 @@ import io.github.seggan.slimefunwarfare.listeners.NukeListener;
 import io.github.seggan.slimefunwarfare.listeners.PyroListener;
 import io.github.seggan.slimefunwarfare.listeners.SpaceListener;
 import io.github.seggan.slimefunwarfare.lists.Categories;
-import io.github.seggan.slimefunwarfare.spacegenerators.SpaceGenerator;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunPlugin;
 import me.mrCookieSlime.Slimefun.Objects.SlimefunItem.SlimefunItem;
-import org.bukkit.Bukkit;
-import org.bukkit.GameRule;
 import org.bukkit.Particle;
-import org.bukkit.World;
-import org.bukkit.WorldCreator;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -70,27 +64,8 @@ public class SlimefunWarfare extends AbstractAddon implements Listener {
 
         Module.setup(this);
 
-        if (getJavaVersion() < 11) {
-            log(Level.WARNING, "你所使用的Java版本小於11! 請使用Java 11 或更高的版本");
-        }
-
-        for (World world : Bukkit.getWorlds()) {
-            String name = world.getName();
-            if (name.endsWith("_nether") || name.endsWith("_the_end") || name.endsWith("_space")) continue;
-
-            World space = Bukkit.getWorld(name + "_space");
-            if (space != null) continue;
-
-            if (!SlimefunPlugin.getWorldSettingsService().isWorldEnabled(world)) continue;
-
-            WorldCreator creator = new WorldCreator(name + "_space")
-                .seed(world.getSeed())
-                .generator(new SpaceGenerator());
-            space = creator.createWorld();
-
-            space.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
-            space.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
-            space.setTime(18000L);
+        if (getJavaVersion() < 16) {
+            log(Level.WARNING, "你所使用的Java版本小於16! 請使用Java 16 或更高的版本");
         }
 
         if (getConfig().getBoolean("guns.autoshoot", true)) {
@@ -179,7 +154,7 @@ public class SlimefunWarfare extends AbstractAddon implements Listener {
     @Nonnull
     @Override
     protected String getGithubPath() {
-        return "xMikux/SlimefunWarfare/master";
+        return "SlimeTraditionalTranslation/SlimefunWarfare/master";
     }
 
     @EventHandler

@@ -98,12 +98,12 @@
         <dependency>
             <groupId>com.github.TheBusyBiscuit</groupId>
             <artifactId>Slimefun4</artifactId>
-            <version>RC-24</version>
+            <version>RC-25</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
-            <groupId>com.github.xMikux</groupId>
+            <groupId>com.github.SlimeTraditionalTranslation</groupId>
             <artifactId>InfinityLib</artifactId>
             <version>d253c30</version>
             <scope>compile</scope>

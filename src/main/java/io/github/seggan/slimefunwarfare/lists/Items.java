@@ -4,7 +4,6 @@ import io.github.thebusybiscuit.slimefun4.core.attributes.MachineTier;
 import io.github.thebusybiscuit.slimefun4.core.attributes.MachineType;
 import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
 import io.github.thebusybiscuit.slimefun4.utils.LoreBuilder;
-import lombok.experimental.UtilityClass;
 import me.mrCookieSlime.Slimefun.api.SlimefunItemStack;
 import org.bukkit.Color;
 import org.bukkit.Material;
@@ -14,6 +13,8 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import lombok.experimental.UtilityClass;
 
 import java.util.UUID;
 
@@ -305,6 +306,51 @@ public final class Items {
         "&b能量整流器",
         "",
         "&7將電能轉化成純能源"
+    );
+    // endregion
+
+    // region rare earths
+    public static final SlimefunItemStack ION_EXCHANGE_SEPARATOR = new SlimefunItemStack(
+        "ION_EXCHANGE_SEPARATOR",
+        Material.SEA_LANTERN,
+        "&b離子交換分離器",
+        "",
+        "&7分離出難以分離的",
+        "&7獨居石中的稀土",
+        LoreBuilder.machine(MachineTier.ADVANCED, MachineType.MACHINE),
+        LoreBuilder.powerPerSecond(256),
+        LoreBuilder.powerBuffer(512)
+    );
+
+    public static final SlimefunItemStack MONAZITE = new SlimefunItemStack(
+        "MONAZITE",
+        Material.ORANGE_DYE,
+        "&e獨居石",
+        "",
+        "&7所有稀土的來源.",
+        "&7在火成岩中找到它"
+    );
+    public static final SlimefunItemStack LANTHANUM_INGOT = new SlimefunItemStack(
+        "LANTHANUM_INGOT",
+        Material.IRON_INGOT,
+        "&e鑭錠",
+        "",
+        "&7可以用作於無限的打火石"
+    );
+    public static final SlimefunItemStack NEODYMIUM_INGOT = new SlimefunItemStack(
+        "NEODYMIUM_INGOT",
+        Material.NETHERITE_INGOT,
+        "&e釹錠"
+    );
+    public static final SlimefunItemStack GADOLINIUM_INGOT = new SlimefunItemStack(
+        "GADOLINIUM_INGOT",
+        Material.IRON_INGOT,
+        "&e釓錠"
+    );
+    public static final SlimefunItemStack TERBIUM_INGOT = new SlimefunItemStack(
+        "TERBIUM_INGOT",
+        Material.IRON_INGOT,
+        "&e鋱錠"
     );
     // endregion
 

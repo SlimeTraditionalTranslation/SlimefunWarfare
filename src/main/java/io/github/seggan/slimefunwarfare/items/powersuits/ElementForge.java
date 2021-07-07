@@ -40,7 +40,7 @@ public class ElementForge extends MultiBlockMachine {
         super(category, item, new ItemStack[]{
             getCorner(), new CustomItem(Material.PISTON, "&f活塞 &7(朝下)"), getCorner(),
             new ItemStack(Material.NETHER_BRICK_WALL), null, new ItemStack(Material.NETHER_BRICK_WALL),
-            new CustomItem(Material.HOPPER, "&f漏斗 &7(朝內)"), new ItemStack(Material.SMITHING_TABLE),
+            new CustomItem(Material.HOPPER, "&f漏斗 &7(朝右)"), new ItemStack(Material.SMITHING_TABLE),
             new ItemStack(Material.DISPENSER)
         }, BlockFace.UP);
     }

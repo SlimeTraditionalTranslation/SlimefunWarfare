@@ -1,11 +1,13 @@
 package io.github.seggan.slimefunwarfare;
 
 import io.github.seggan.slimefunwarfare.georesources.Arsenic;
+import io.github.seggan.slimefunwarfare.georesources.Monazite;
 import io.github.seggan.slimefunwarfare.items.Bullet;
 import io.github.seggan.slimefunwarfare.items.Dummy;
 import io.github.seggan.slimefunwarfare.items.EnergyBlade;
 import io.github.seggan.slimefunwarfare.items.FLOX;
 import io.github.seggan.slimefunwarfare.items.Grenade;
+import io.github.seggan.slimefunwarfare.items.IonExchangeSeparator;
 import io.github.seggan.slimefunwarfare.items.NuclearBomb;
 import io.github.seggan.slimefunwarfare.items.blocks.Meteor;
 import io.github.seggan.slimefunwarfare.items.guns.EnergyRifle;
@@ -14,6 +16,8 @@ import io.github.seggan.slimefunwarfare.items.powersuits.ArmorPiece;
 import io.github.seggan.slimefunwarfare.items.powersuits.ElementForge;
 import io.github.seggan.slimefunwarfare.items.powersuits.ModuleManipulator;
 import io.github.seggan.slimefunwarfare.items.powersuits.PowerSuit;
+import io.github.seggan.slimefunwarfare.items.rareearths.Lanthanum;
+import io.github.seggan.slimefunwarfare.items.rareearths.RareEarth;
 import io.github.seggan.slimefunwarfare.lists.Categories;
 import io.github.seggan.slimefunwarfare.lists.Items;
 import io.github.seggan.slimefunwarfare.lists.RecipeTypes;
@@ -315,6 +319,16 @@ public final class Setup {
             null, null, null,
             null, null, null
         }).register(addon);
+
+        new IonExchangeSeparator().register(addon);
+
+        new Monazite(Items.MONAZITE).register();
+        new SlimefunItem(Categories.RESOURCES, Items.MONAZITE, RecipeType.GEO_MINER, new ItemStack[9]).register(addon);
+
+        new Lanthanum().register(addon);
+        new RareEarth(Items.NEODYMIUM_INGOT).register(addon);
+        new RareEarth(Items.GADOLINIUM_INGOT).register(addon);
+        new RareEarth(Items.TERBIUM_INGOT).register(addon);
     }
 
     static void setupSuits(SlimefunWarfare addon) {
@@ -368,6 +382,7 @@ public final class Setup {
         addResearch("I am Iron Man", "我是鋼鐵人", 70, Items.POWER_SUIT_HELMET, Items.POWER_SUIT_CHESTPLATE, Items.POWER_SUIT_LEGGINGS, Items.POWER_SUIT_BOOTS);
         addResearch("Energy Weapons", "能量武器", 45, Items.ENERGY_BLADE, Items.ENERGY_RECTIFIER, Items.ENERGY_RIFLE);
         addResearch("Alien Metals", "外星金屬", 40, Items.OSMIUM_DUST, Items.OSMIUM_INGOT, Items.OSMIUM_SUPERALLOY);
+        addResearch("Rare Earths", "稀土", 50, Items.MONAZITE, Items.LANTHANUM_INGOT, Items.NEODYMIUM_INGOT, Items.GADOLINIUM_INGOT, Items.TERBIUM_INGOT);
     }
 
     private static void addResearch(String id, String name, int xp, SlimefunItemStack... items) {
