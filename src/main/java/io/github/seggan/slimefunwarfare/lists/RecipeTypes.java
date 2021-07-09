@@ -2,8 +2,6 @@ package io.github.seggan.slimefunwarfare.lists;
 
 import io.github.seggan.slimefunwarfare.SlimefunWarfare;
 import me.mrCookieSlime.Slimefun.Lists.RecipeType;
-import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
-import org.bukkit.Material;
 
 import lombok.experimental.UtilityClass;
 
@@ -15,15 +13,6 @@ public final class RecipeTypes {
         Items.ELEMENT_FORGE,
         "&c元素鍛造台",
         "&7用於製作新的元素"
-    );
-
-    public static final RecipeType SPACE = new RecipeType(
-        SlimefunWarfare.inst().getKey("space"),
-        new CustomItem(
-            Material.NETHER_STAR,
-            "&f太空",
-            "&7在外太空找到這些材料"
-        )
     );
 
     public static final RecipeType AIR_LIQUEFIER = new RecipeType(
@@ -49,5 +38,10 @@ public final class RecipeTypes {
     public static final RecipeType ION_SEPARATOR = new RecipeType(
         SlimefunWarfare.inst().getKey("iron_exchange_separator"),
         Items.ION_EXCHANGE_SEPARATOR
+    );
+
+    public static final RecipeType METEOR_ATTRACTOR = new RecipeType(
+        SlimefunWarfare.inst().getKey("meteor_attractor"),
+        Items.METEOR_ATTRACTOR
     );
 }

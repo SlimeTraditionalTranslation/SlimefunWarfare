@@ -55,16 +55,16 @@ public final class Items {
         HeadTexture.TIN_CAN,
         "&f液氧",
         "",
-        "&7提神醒腦"
+        "&7古老的實驗室傳說,",
+        "&7如果你把它放在地毯上..."
     );
     public static final SlimefunItemStack FLOX = new SlimefunItemStack(
         "FLOX",
         HeadTexture.TIN_CAN,
         "&fFLOX",
         "",
-        "&7燃料+液態氧. 右鍵來去太空",
-        "&c請確保點兩次空白鍵當",
-        "&c你在傳送的時候繼續落下"
+        "&7燃料+液氧. 這還會發生",
+        "&7比這更糟的事情?"
     );
     public static final SlimefunItemStack THIOACETONE = new SlimefunItemStack(
         "THIOACETONE",
@@ -307,6 +307,15 @@ public final class Items {
         "",
         "&7將電能轉化成純能源"
     );
+
+    public static final SlimefunItemStack METEOR_ATTRACTOR = new SlimefunItemStack(
+        "METEOR_ATTRACTOR",
+        HeadTexture.MAGNET,
+        "&f流星吸引器",
+        "",
+        "&7一個強大的磁鐵, 它可以",
+        "&7從太空中吸引流星"
+    );
     // endregion
 
     // region rare earths
@@ -330,6 +339,7 @@ public final class Items {
         "&7所有稀土的來源.",
         "&7在火成岩中找到它"
     );
+
     public static final SlimefunItemStack LANTHANUM_INGOT = new SlimefunItemStack(
         "LANTHANUM_INGOT",
         Material.IRON_INGOT,
@@ -337,20 +347,54 @@ public final class Items {
         "",
         "&7可以用作於無限的打火石"
     );
+
     public static final SlimefunItemStack NEODYMIUM_INGOT = new SlimefunItemStack(
         "NEODYMIUM_INGOT",
         Material.NETHERITE_INGOT,
         "&e釹錠"
     );
+
     public static final SlimefunItemStack GADOLINIUM_INGOT = new SlimefunItemStack(
         "GADOLINIUM_INGOT",
         Material.IRON_INGOT,
         "&e釓錠"
     );
+
     public static final SlimefunItemStack TERBIUM_INGOT = new SlimefunItemStack(
         "TERBIUM_INGOT",
         Material.IRON_INGOT,
         "&e鋱錠"
+    );
+
+    public static final SlimefunItemStack TERFENOL_D = new SlimefunItemStack(
+        "TERFENOL_D",
+        Material.IRON_INGOT,
+        "&6鋱鐵鏑",
+        "",
+        "&7這種合金具有在",
+        "&7磁場中改變形狀",
+        "&7的有趣特性"
+    );
+
+    public static final SlimefunItemStack TERFENOL_D_BLOCK = new SlimefunItemStack(
+        "TERFENOL_D_BLOCK",
+        Material.IRON_BLOCK,
+        "&6鋱鐵鏑磚"
+    );
+
+    public static final SlimefunItemStack NDFEB_ALLOY = new SlimefunItemStack(
+        "NDFEB_ALLOY",
+        Material.NETHERITE_INGOT,
+        "&6釹鐵硼合金",
+        "",
+        "&7這種合金是人類已知",
+        "&7磁性最強的材料"
+    );
+
+    public static final SlimefunItemStack NDFEB_ALLOY_BLOCK = new SlimefunItemStack(
+        "NDFEB_ALLOY_BLOCK",
+        Material.NETHERITE_BLOCK,
+        "&6釹鐵硼合金磚"
     );
     // endregion
 

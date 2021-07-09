@@ -3,11 +3,12 @@ package io.github.seggan.slimefunwarfare.lists;
 import io.github.mooy1.infinitylib.categories.MultiCategory;
 import io.github.mooy1.infinitylib.categories.SubCategory;
 import io.github.seggan.slimefunwarfare.SlimefunWarfare;
-import lombok.experimental.UtilityClass;
 import me.mrCookieSlime.Slimefun.Objects.Category;
 import me.mrCookieSlime.Slimefun.cscorelib2.item.CustomItem;
 import me.mrCookieSlime.Slimefun.cscorelib2.skull.SkullItem;
 import org.bukkit.Material;
+
+import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public final class Categories {
@@ -15,6 +16,11 @@ public final class Categories {
     public static final Category GENERAL = new SubCategory(
         SlimefunWarfare.inst().getKey("slimefunwarfare_general"),
         new CustomItem(Material.DIAMOND_SWORD, "黏液戰爭 - 一般")
+    );
+
+    public static final Category MACHINES = new SubCategory(
+        SlimefunWarfare.inst().getKey("slimefunwarfare_machines"),
+        new CustomItem(Material.STONECUTTER, "黏液戰爭 - 機器")
     );
 
     public static final Category GUNS = new SubCategory(
@@ -42,10 +48,10 @@ public final class Categories {
         new CustomItem(SkullItem.fromBase64(Heads.SUIT_HELMET), "黏液戰爭 - 動力服")
     );
 
-    public static final Category MAIN = new MultiCategory(
+    private static final Category MAIN = new MultiCategory(
         SlimefunWarfare.inst().getKey("slimefunwarfare"),
         new CustomItem(Material.DIAMOND_SWORD, "黏液戰爭"),
-        GENERAL, GUNS, MELEE, EXPLOSIVES, RESOURCES, POWER_SUITS
+        GENERAL, MACHINES, GUNS, MELEE, EXPLOSIVES, RESOURCES, POWER_SUITS
     );
 
     public static void setup(SlimefunWarfare addon) {
