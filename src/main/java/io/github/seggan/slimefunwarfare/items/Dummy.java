@@ -41,6 +41,8 @@ public class Dummy extends SlimefunItem {
             z.setCustomName("假人");
             z.setCustomNameVisible(true);
 
+            z.setRemoveWhenFarAway(false);
+
             z.setAI(false);
             z.setAware(false);
 
