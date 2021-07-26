@@ -328,6 +328,19 @@ public final class Items {
         "&7一個強大的磁鐵, 它可以",
         "&7從太空中吸引流星"
     );
+
+    public static final SlimefunItemStack ELEMENTAL_REACTOR = new SlimefunItemStack(
+        "ELEMENTAL_REACTOR",
+        HeadTexture.GENERATOR,
+        "&b元素反應器",
+        "",
+        "&7產生容量從",
+        "&7豐富非專利能量元素",
+        "&7和 Segganesson",
+        LoreBuilder.machine(MachineTier.END_GAME, MachineType.GENERATOR),
+        LoreBuilder.powerBuffer(32_768),
+        LoreBuilder.powerPerSecond(32_768)
+    );
     // endregion
 
     // region rare earths
@@ -376,6 +389,30 @@ public final class Items {
         "TERBIUM_INGOT",
         Material.IRON_INGOT,
         "&e鋱錠"
+    );
+
+    public static final SlimefunItemStack DYSPROSIUM_INGOT = new SlimefunItemStack(
+        "DYSPROSIUM_INGOT",
+        Material.NETHERITE_INGOT,
+        "&e鏑錠"
+    );
+
+    public static final SlimefunItemStack HOLMIUM_INGOT = new SlimefunItemStack(
+        "HOLMIUM_INGOT",
+        Material.BRICK,
+        "&e鈥錠"
+    );
+
+    public static final SlimefunItemStack ERBIUM_INGOT = new SlimefunItemStack(
+        "ERBIUM_INGOT",
+        Material.IRON_INGOT,
+        "&e鉺錠"
+    );
+
+    public static final SlimefunItemStack YTTERBIUM_INGOT = new SlimefunItemStack(
+        "YTTERBIUM_INGOT",
+        Material.IRON_INGOT,
+        "&e鐿錠"
     );
 
     public static final SlimefunItemStack TERFENOL_D = new SlimefunItemStack(

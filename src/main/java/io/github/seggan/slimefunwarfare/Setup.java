@@ -24,6 +24,7 @@ import io.github.seggan.slimefunwarfare.lists.RecipeTypes;
 import io.github.seggan.slimefunwarfare.machines.AirLiquefier;
 import io.github.seggan.slimefunwarfare.machines.Boominator9000;
 import io.github.seggan.slimefunwarfare.machines.BulletPress;
+import io.github.seggan.slimefunwarfare.machines.ElementalReactor;
 import io.github.seggan.slimefunwarfare.machines.ExplosiveSynthesizer;
 import io.github.seggan.slimefunwarfare.machines.IonExchangeSeparator;
 import io.github.seggan.slimefunwarfare.machines.MeteorAttractor;
@@ -113,7 +114,7 @@ public final class Setup {
         // Energy
         new SlimefunItem(Categories.GENERAL, Items.OSMIUM_SUPERALLOY, RecipeType.SMELTERY, new ItemStack[]{
             Items.OSMIUM_INGOT, Items.SEGGANESSON, Items.REINFORCED_SLIMESTEEL, SlimefunItems.REINFORCED_ALLOY_INGOT,
-            Items.OSMIUM_DUST, null, null,
+            Items.OSMIUM_DUST, Items.GADOLINIUM_INGOT, null,
             null, null, null
         }).register(addon);
 
@@ -317,9 +318,14 @@ public final class Setup {
         new RareEarth(Items.NEODYMIUM_INGOT).register(addon);
         new RareEarth(Items.GADOLINIUM_INGOT).register(addon);
         new RareEarth(Items.TERBIUM_INGOT).register(addon);
+        new RareEarth(Items.DYSPROSIUM_INGOT).register(addon);
+        new RareEarth(Items.HOLMIUM_INGOT).register(addon);
+        new RareEarth(Items.ERBIUM_INGOT).register(addon);
+        new RareEarth(Items.YTTERBIUM_INGOT).register(addon);
 
-        new SlimefunItem(Categories.GENERAL, Items.TERFENOL_D, RecipeType.SMELTERY, fillNulls(new SlimefunItemStack(Items.TERBIUM_INGOT, 3),
-            new SlimefunItemStack(Items.GADOLINIUM_INGOT, 2), new ItemStack(Material.IRON_INGOT), SlimefunItems.COBALT_INGOT
+        new SlimefunItem(Categories.GENERAL, Items.TERFENOL_D, RecipeType.SMELTERY, fillNulls(
+            new SlimefunItemStack(Items.TERBIUM_INGOT, 3), new SlimefunItemStack(Items.GADOLINIUM_INGOT, 2), new ItemStack(Material.IRON_INGOT),
+            SlimefunItems.COBALT_INGOT, new SlimefunItemStack(Items.DYSPROSIUM_INGOT, 2)
         )).register(addon);
 
         new SlimefunItem(Categories.GENERAL, Items.TERFENOL_D_BLOCK, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
@@ -329,7 +335,8 @@ public final class Setup {
         }).register(addon);
 
         new SlimefunItem(Categories.GENERAL, Items.NDFEB_ALLOY, RecipeType.SMELTERY, fillNulls(
-            new SlimefunItemStack(Items.NEODYMIUM_INGOT, 4), Items.BORON, new ItemStack(Material.IRON_INGOT)
+            new SlimefunItemStack(Items.NEODYMIUM_INGOT, 4), Items.BORON,
+            new ItemStack(Material.IRON_INGOT), Items.DYSPROSIUM_INGOT
         )).register(addon);
 
         new SlimefunItem(Categories.GENERAL, Items.NDFEB_ALLOY_BLOCK, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
@@ -339,6 +346,8 @@ public final class Setup {
         }).register(addon);
 
         new MeteorAttractor().register(addon);
+
+        new ElementalReactor().register(addon);
     }
 
     static void setupSuits(SlimefunWarfare addon) {
@@ -358,7 +367,7 @@ public final class Setup {
             null, Items.OSMIUM_INGOT, null,
             Items.OSMIUM_INGOT, Items.POWER_SUIT_GENERATOR, Items.OSMIUM_INGOT,
             null, Items.OSMIUM_INGOT, null
-        }).register(addon);
+        }, new SlimefunItemStack(Items.MODULE_CASE, 2)).register(addon);
 
         new PowerSuit(Items.POWER_SUIT_HELMET, new ItemStack[]{
             SlimefunItems.ADVANCED_CIRCUIT_BOARD, Items.POWER_SUIT_GENERATOR, SlimefunItems.ADVANCED_CIRCUIT_BOARD,
