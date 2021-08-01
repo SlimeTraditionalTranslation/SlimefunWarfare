@@ -145,11 +145,11 @@ public class SlimefunWarfare extends AbstractAddon implements Listener {
         return new Metrics(this, 9227);
     }*/
 
-    //@Nullable
-    //@Override
-    /*public String getAutoUpdatePath() {
+    @Nullable
+    @Override
+    public String getAutoUpdatePath() {
         return "auto-update";
-    }*/
+    }
 
     @Nonnull
     @Override
