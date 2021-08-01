@@ -1,5 +1,6 @@
 name: SlimefunWarfare
 main: io.github.seggan.slimefunwarfare.SlimefunWarfare
+description: 黏液科技附加 黏液戰爭 繁體翻譯版.
 version: ${version}
 author: Seggan
 depend:
