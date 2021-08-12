@@ -341,6 +341,43 @@ public final class Items {
         LoreBuilder.powerBuffer(32_768),
         LoreBuilder.powerPerSecond(32_768)
     );
+
+    public static final SlimefunItemStack FIBER_OPTIC_GLASS = new SlimefunItemStack(
+        "FIBER_OPTIC_GLASS",
+        Material.BLUE_STAINED_GLASS,
+        "&f光纖玻璃"
+    );
+
+    public static final SlimefunItemStack FIBER_OPTIC_CABLE = new SlimefunItemStack(
+        "FIBER_OPTIC_CABLE",
+        Material.STRING,
+        "&f光纖電線"
+    );
+
+    public static final SlimefunItemStack LASER_DIODE = new SlimefunItemStack(
+        "LASER_DIODE",
+        Heads.LASER,
+        "&4雷射二極體"
+    );
+
+    public static final SlimefunItemStack ULTRA_MAGNET = new SlimefunItemStack(
+        "ULTRA_MAGNET",
+        HeadTexture.MAGNET.getTexture(),
+        "&f超級磁鐵"
+    );
+
+    public static final SlimefunItemStack RADIO = new SlimefunItemStack(
+        "RADIO",
+        Material.REDSTONE_TORCH,
+        "&f無線電",
+        "",
+        "&7拿著這個與其他有這個在它們",
+        "&7的背包內的來聊天. 加密鑰匙",
+        "&7用於對訊息的 編碼/解碼,",
+        "&7因此只有與你使用相同的",
+        "&7加密鑰匙才能理解該訊息. 拿著來聊天,",
+        "&7右鍵點擊來設置加密鑰匙"
+    );
     // endregion
 
     // region rare earths

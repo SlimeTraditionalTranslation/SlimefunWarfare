@@ -9,6 +9,7 @@ import io.github.seggan.slimefunwarfare.items.FLOX;
 import io.github.seggan.slimefunwarfare.items.Grenade;
 import io.github.seggan.slimefunwarfare.items.LiquidOxygen;
 import io.github.seggan.slimefunwarfare.items.NuclearBomb;
+import io.github.seggan.slimefunwarfare.items.Radio;
 import io.github.seggan.slimefunwarfare.items.blocks.Meteor;
 import io.github.seggan.slimefunwarfare.items.guns.EnergyRifle;
 import io.github.seggan.slimefunwarfare.items.guns.Gun;
@@ -96,6 +97,27 @@ public final class Setup {
         }).register(addon);
 
         new ElementForge(Categories.POWER_SUITS, Items.ELEMENT_FORGE).register(addon);
+
+        new SlimefunItem(Categories.GENERAL, Items.FIBER_OPTIC_GLASS, RecipeType.SMELTERY, fillNulls(
+            Items.ERBIUM_INGOT, SlimefunItems.SILICON, new ItemStack(Material.GLASS), new ItemStack(Material.GLASS_PANE)
+        )).register(addon);
+
+        new SlimefunItem(Categories.GENERAL, Items.FIBER_OPTIC_CABLE, RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{
+            SlimefunItems.SILVER_INGOT, SlimefunItems.SILVER_INGOT, SlimefunItems.SILVER_INGOT,
+            Items.FIBER_OPTIC_GLASS, Items.FIBER_OPTIC_GLASS, Items.FIBER_OPTIC_GLASS,
+            SlimefunItems.SILVER_INGOT, SlimefunItems.SILVER_INGOT, SlimefunItems.SILVER_INGOT
+        }).register(addon);
+
+        new SlimefunItem(Categories.GENERAL, Items.LASER_DIODE, RecipeType.SMELTERY, fillNulls(
+            SlimefunItems.SYNTHETIC_SAPPHIRE, new ItemStack(Material.GLOWSTONE),
+            new SlimefunItemStack(Items.YTTERBIUM_INGOT, 2), Items.FIBER_OPTIC_GLASS
+        )).register(addon);
+
+        new SlimefunItem(Categories.GENERAL, Items.ULTRA_MAGNET, RecipeType.SMELTERY, fillNulls(
+            SlimefunItems.MAGNET, Items.NDFEB_ALLOY, new SlimefunItemStack(Items.HOLMIUM_INGOT, 2)
+        )).register(addon);
+
+        new Radio().register(addon);
     }
 
     static void setupMelee(SlimefunWarfare addon) {
