@@ -51,22 +51,6 @@ public final class Items {
         "",
         "&7盡可能純淨"
     );
-    public static final SlimefunItemStack LIQUID_OXYGEN = new SlimefunItemStack(
-        "LIQUID_OXYGEN",
-        HeadTexture.TIN_CAN,
-        "&f液氧",
-        "",
-        "&7古老的實驗室傳說,",
-        "&7如果你把它放在地毯上..."
-    );
-    public static final SlimefunItemStack FLOX = new SlimefunItemStack(
-        "FLOX",
-        HeadTexture.TIN_CAN,
-        "&fFLOX",
-        "",
-        "&7燃料+液氧. 這還會發生",
-        "&7比這更糟的事情?"
-    );
     public static final SlimefunItemStack THIOACETONE = new SlimefunItemStack(
         "THIOACETONE",
         Material.BROWN_DYE,
