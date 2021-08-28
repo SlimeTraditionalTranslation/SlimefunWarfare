@@ -4,7 +4,6 @@ rules:
     upstream: Seggan:master
     mergeMethod: merge
     conflictReviewers:
-    conflictReviewers:
       - weiii-joe
       - xhuanfux
       - xMikux
