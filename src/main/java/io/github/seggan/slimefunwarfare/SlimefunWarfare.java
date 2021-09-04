@@ -4,7 +4,7 @@ import com.google.common.collect.Sets;
 import io.github.mooy1.infinitylib.common.Events;
 import io.github.mooy1.infinitylib.common.Scheduler;
 import io.github.mooy1.infinitylib.core.AbstractAddon;
-import io.github.mooy1.infinitylib.metrics.bukkit.Metrics;
+//import io.github.mooy1.infinitylib.metrics.bukkit.Metrics;
 import io.github.seggan.slimefunwarfare.items.guns.Gun;
 import io.github.seggan.slimefunwarfare.items.powersuits.ArmorPiece;
 import io.github.seggan.slimefunwarfare.items.powersuits.Module;
@@ -53,7 +53,7 @@ public class SlimefunWarfare extends AbstractAddon implements Listener {
     public void enable() {
         instance = this;
 
-        new Metrics(this, 9227);
+        //new Metrics(this, 9227);
 
         Events.registerListener(new BulletListener());
         Events.registerListener(new PyroListener());
