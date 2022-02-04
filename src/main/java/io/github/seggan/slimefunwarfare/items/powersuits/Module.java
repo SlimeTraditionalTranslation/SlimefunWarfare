@@ -70,8 +70,8 @@ public enum Module {
     }, 2),
     AUXILIARY_GENERATOR(8, "輔助發電機", null, new ItemStack[]{
         Items.OSMIUM_SUPERALLOY, Items.POWER_SUIT_GENERATOR, Items.OSMIUM_SUPERALLOY,
-        Items.POWER_SUIT_GENERATOR, Items.MODULE_CASE, Items.POWER_SUIT_GENERATOR,
-        Items.OSMIUM_SUPERALLOY, Items.POWER_SUIT_GENERATOR, Items.OSMIUM_SUPERALLOY
+        Items.SEGGANESSON, Items.MODULE_CASE, Items.SEGGANESSON,
+        Items.OSMIUM_SUPERALLOY, Items.SEGGANESSON, Items.OSMIUM_SUPERALLOY
     }, 5, "&7加速動力服的能量產生"),
     ELECTRONIC_SPRINGS(9, "電動彈簧", PotionEffectType.JUMP, 1, ArmorPiece.LEGS, new ItemStack[]{
         Items.REINFORCED_SLIMESTEEL, SlimefunItems.ADVANCED_CIRCUIT_BOARD, Items.REINFORCED_SLIMESTEEL,
