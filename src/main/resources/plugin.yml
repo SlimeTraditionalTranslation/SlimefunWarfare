@@ -9,4 +9,5 @@ softdepend:
   - SimpleStorage
   - InfinityExpansion
   - DynaTech
+  - TownyFlight
 api-version: 1.15
